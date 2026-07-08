@@ -1,0 +1,18 @@
+[package]
+name = "xlate-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Provider-agnostic LLM translation engine core types, traits, and router"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+async-trait.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+tokio.workspace = true
+dashmap.workspace = true
+rust_decimal.workspace = true
+glob-match.workspace = true
+futures-util.workspace = true

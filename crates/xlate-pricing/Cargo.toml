@@ -1,0 +1,17 @@
+[package]
+name = "xlate-pricing"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+xlate-core = { path = "../xlate-core" }
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+async-trait.workspace = true
+reqwest.workspace = true
+tracing.workspace = true
+rust_decimal.workspace = true
+dashmap.workspace = true
+glob-match.workspace = true

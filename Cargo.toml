@@ -1,0 +1,38 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/xlate-core",
+    "crates/xlate-openai",
+    "crates/xlate-anthropic",
+    "crates/xlate-hooks",
+    "crates/xlate-store",
+    "crates/xlate-token",
+    "crates/xlate-ffi",
+    "crates/xlate-pricing",
+    "crates/xlate-test",
+    "drivers/cursor",
+    "cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0-or-later"
+repository = "https://github.com/LamClod/openxlate"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+async-trait = "0.1"
+thiserror = "2"
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "rustls-tls"] }
+futures-util = "0.3"
+tracing = "0.1"
+once_cell = "1"
+base64 = "0.22"
+dashmap = "6"
+rust_decimal = { version = "1", features = ["serde-with-str"] }
+glob-match = "0.2"
+rusqlite = { version = "0.32", features = ["bundled"] }
+arc-swap = "1"

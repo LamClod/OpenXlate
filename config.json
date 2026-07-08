@@ -1,0 +1,19 @@
+{
+  "routes": [
+    {
+      "model": "*",
+      "targets": [
+        {
+          "id": "bytecatcode",
+          "plugin": "anthropic",
+          "config": {
+            "plugin": "anthropic",
+            "base_url": "https://code.bytecatcode.org",
+            "api_key": "sk-2fdPVUvraloSFANYzQaUppuJYKNTi9yaQpv165iwNYe6rk5R",
+            "upstream_model": "claude-opus-4-6"
+          }
+        }
+      ]
+    }
+  ]
+}

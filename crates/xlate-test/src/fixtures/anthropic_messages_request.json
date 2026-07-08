@@ -1,0 +1,9 @@
+{
+  "model": "claude-sonnet-4-20250514",
+  "system": "You are a helpful assistant.",
+  "messages": [
+    {"role": "user", "content": "Hello, world!"}
+  ],
+  "stream": true,
+  "max_tokens": 100
+}
