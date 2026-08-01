@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+target/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Tauri generated
+src-tauri/gen/
+
+# local debug artifacts (not part of source)
+.playwright-mcp/
+/openxlate-ui-check.png
+
+# Python test cache
+__pycache__/
+*.pyc

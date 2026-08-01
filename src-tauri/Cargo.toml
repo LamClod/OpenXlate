@@ -1,0 +1,59 @@
+[package]
+name = "openxlate"
+version = "0.1.0"
+description = "OpenXlate - 开源智能翻译桌面应用"
+edition = "2021"
+default-run = "openxlate"
+
+[lib]
+name = "openxlate"
+path = "src/lib.rs"
+
+[[bin]]
+name = "openxlate"
+path = "src/main.rs"
+
+[[bin]]
+name = "codec_cli"
+path = "src/bin/codec_cli.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = "0.4"
+
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-store = "2"
+tauri-plugin-shell = "2"
+tauri-plugin-single-instance = "2"
+tauri-plugin-dialog = "2"
+
+reqwest = { version = "0.12", features = ["json", "rustls-tls", "stream"] }
+tokio = { version = "1", features = ["time", "sync", "rt-multi-thread", "macros", "net"] }
+futures = { version = "0.3", default-features = false, features = ["std", "async-await"] }
+axum = "0.8"
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+uuid = { version = "1", features = ["v4"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows = { version = "0.61.3", features = [
+  "Win32_Foundation",
+  "Win32_UI_WindowsAndMessaging",
+] }
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+strip = true
+lto = "thin"
+codegen-units = 1
+opt-level = "s"
